@@ -1,13 +1,24 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
-
 
 int main()
 {
-    char str1[7] = "Seoul ";
-    char str2[3] = {'i','s'};
-    char str3[] = " the capital city of Korea";
+    char s1[80];	
+	char s2[80];	
+	int result;
 
-    cout << str1 << str2 << str3;
-    return 0;
+	cout << "첫번째 단어를 입력하시오:";
+	cin >> s1;
+	cout << "두번째 단어를 입력하시오:";
+	cin >> s2;
+	result = strcmp(s1, s2);
+	if( result < 0 )
+		cout << s1 << "이 " << s2 << "보다 앞에 있습니다." << endl;
+	else if( result == 0 )
+		cout << s1 << "이 " << s2 << "와 같습니다." << endl;
+	else 
+		cout << s1 << "이 " << s2 << "보다 뒤에 있습니다." << endl;
+	return 0;
+
 }
